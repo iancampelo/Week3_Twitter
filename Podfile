@@ -8,5 +8,7 @@ target 'Week3_Twitter' do
   # Pods for Week3_Twitter
   pod 'AFNetworking'
   pod 'BDBOAuth1Manager'
+  pod 'MBProgressHUD'
+  pod 'NSDate+TimeAgo'
 
 end
