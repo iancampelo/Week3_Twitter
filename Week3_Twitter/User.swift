@@ -36,11 +36,11 @@ class User: NSObject {
     
     class var currentUser: User? {
         get {
-            if _currentUser != nil{
+            if _currentUser == nil{
                 
                 let defaults = UserDefaults.standard
                 
-                let userData = defaults.object(forKey: "currentUserData") as? NSData
+                let userData = defaults.set(nil, forKey: "currentUserData") as? NSData
                 if let userData = userData{
                     let dictionary = try! JSONSerialization.jsonObject(with: userData as Data, options: []) as! NSDictionary
                     _currentUser = User(dictionary: dictionary)
